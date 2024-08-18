@@ -44,12 +44,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
         <!-- Spring Boot Starter Test: 包含用于测试Spring Boot应用程序的依赖项 -->
@@ -73,7 +67,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.12</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
             <exclusions>
                 <exclusion>
                     <artifactId>gson</artifactId>
@@ -86,14 +80,14 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_2.12</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
         </dependency>
         <!-- Spark Hive -->
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-hive_2.12</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
             <exclusions>
                 <exclusion>
                     <artifactId>gson</artifactId>
@@ -106,7 +100,7 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
             <version>${hadoop.version}</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
@@ -244,15 +238,15 @@
                                 <exclude>META-INF/LICENSE</exclude>
                                 <exclude>META-INF/services/java.sql.Driver</exclude>
                                 <!-- 排除resources下的xml配置文件 -->
-                                <exclude>*.xml</exclude>
+                                <!--<exclude>*.xml</exclude>-->
                             </excludes>
                         </filter>
                     </filters>
                     <artifactSet>
                         <!-- 排除依赖项 -->
                         <excludes>
-                            <exclude>org.apache.logging.log4j:*</exclude>
-                            <exclude>org.slf4j:*</exclude>
+                            <!--<exclude>org.apache.logging.log4j:*</exclude>
+                            <exclude>org.slf4j:*</exclude>-->
                         </excludes>
                     </artifactSet>
                 </configuration>

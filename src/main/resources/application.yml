@@ -2,6 +2,6 @@ server:
   port: 20602
 spring:
   main:
-    web-application-type: none
+    web-application-type: servlet
   application:
     name: ${project.artifactId}

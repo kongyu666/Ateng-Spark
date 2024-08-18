@@ -8,7 +8,10 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
  * SparkCore相关任务
@@ -23,7 +26,8 @@ public class MySparkCoreTask {
     /**
      * RDD转Dataset
      */
-    public void run() {
+    @Async
+    public CompletableFuture<Void> run() {
         // 获取环境
         JavaSparkContext sc = SpringUtil.getBean("sparkContext", JavaSparkContext.class);
         SparkSession spark = SpringUtil.getBean("sparkSession", SparkSession.class);
@@ -40,5 +44,8 @@ public class MySparkCoreTask {
         // 显示Dataset的内容
         ds.show();
         System.out.println("sparkDataset任务运行成功");
+
+        return CompletableFuture.completedFuture(null);
+
     }
 }

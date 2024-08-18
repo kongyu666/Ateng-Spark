@@ -28,7 +28,7 @@ public class MySparkConfig {
         // 创建Spark配置
         SparkConf conf = new SparkConf();
         // 设置应用名称
-        conf.setAppName("Ateng-Spark");
+        conf.setAppName("SparkOnSpring");
         // 设置运行环境
         String masterValue = conf.get("spark.master", "local[*]");
         conf.setMaster(masterValue);
